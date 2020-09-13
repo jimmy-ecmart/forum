@@ -10,5 +10,6 @@
     <body>
         <h1>Sample post</h1>
         </p>put your content here!</p>
+        <h1>Post, {{ $post }}</h1>
     </body>
     </html>
