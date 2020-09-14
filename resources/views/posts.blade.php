@@ -8,7 +8,11 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>{{$post->title}}</h1>
-        </p>put your content here!</p>
+        <h1>Here are the Posts:</h1>
+        <ul>
+        @foreach ($posts as $post)
+            <li>{{ $post -> title }}</li>
+        @endforeach
+        </ul>  
     </body>
     </html>
