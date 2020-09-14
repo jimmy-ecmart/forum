@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,12 +74,19 @@ Route::get('/', function () {
 // });
 
 /*
-6. 用用eloquent抓取posts資料傳入文章列表
+6. 使用eloquent抓取posts資料傳入文章列表
 */
-Route::get('/posts', function(){
-    $posts = App\Models\Post::all();
-    return view('posts', ['posts' => $posts]);
-});
+// Route::get('/posts', function(){
+//     $posts = App\Models\Post::all();
+//     return view('posts', ['posts' => $posts]);
+// });
 
+/*
+7. 使用controllers抓取posts資料傳入文章列表
+*/
+Route::get('posts', [PostController::class, 'index']);
 
-
+/*
+8. 建立一個show post的route，能夠在url的path中傳入id
+*/
+Route::get('posts/{id}', [PostController::class, 'show']);
