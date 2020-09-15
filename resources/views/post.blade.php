@@ -8,7 +8,9 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>Sample post</h1>
+        <h1>
+        {{ isset($post) ? $post->title : 'Post does not exist!' }}
+        </h1>
         </p>put your content here!</p>
     </body>
     </html>
