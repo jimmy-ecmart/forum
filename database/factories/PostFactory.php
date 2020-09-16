@@ -24,9 +24,9 @@ class PostFactory extends Factory
     {
         return [
             //
-            'slug' => $this->faker->sentence,
-            'title' => $this->faker->sentence,
-            'body' => $this->faker->paragraph
+            'slug' => $this->faker->text($maxNbChars = 5),
+            'title' => $this->faker->text($maxNbChars = 50),
+            'body' => $this->faker->text($maxNbChars = 200)
         ];
     }
 }
