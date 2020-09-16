@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route ::get('/posts/{post}', function($post){
-    return view('post');
+Route ::get('/posts', function(){
+    return view('posts');
 });
