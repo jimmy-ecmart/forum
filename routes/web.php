@@ -24,13 +24,8 @@ Route::get('/', function () {
 /*
 2. 靜態文章列表頁
 */
-// Route::get('/posts/{slug}', function($slug){
-//     $post = DB::table('posts')->where('slug', $slug)->first();
-//     // dd($post);
-//     if($post === null){
-//         abort(404);
-//     }
-//     return view('post', ['post' => $post]);
+// Route ::get('/posts', function(){
+//     return view('posts');
 // });
 
 /*
@@ -76,7 +71,7 @@ Route::get('/', function () {
 6. 用用eloquent抓取posts資料傳入文章列表
 */
 Route::get('/posts', function(){
-    $posts = App\Models\Post::all();
+    $posts = App\Models\Post::get();
     return view('posts', ['posts' => $posts]);
 });
 
